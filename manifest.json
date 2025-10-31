@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Shortcuts Helper",
+  "version": "1.0.0",
+  "description": "Shows keyboard shortcut hints when you interact with GitHub",
+  "permissions": [],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}
