@@ -14,7 +14,7 @@
     'Actions': 'g then a',
     'Projects': 'g then b',
     'Wiki': 'g then w',
-    'Notifications': 'g then n',
+    'Notifications': 'g then n'
   };
 
   // Inject Sonner toast styles and container
@@ -91,7 +91,7 @@
   }
 
   // Show a toast notification
-  function showToast(message) {
+  function showToast(shortcut) {
     let container = document.querySelector('.github-shortcuts-toaster');
     if (!container) {
       container = createToastContainer();
@@ -99,7 +99,17 @@
 
     const toast = document.createElement('div');
     toast.className = 'github-shortcuts-toast';
-    toast.innerHTML = message;
+    
+    // Create elements safely without innerHTML
+    const icon = document.createTextNode('💡 Press ');
+    const code = document.createElement('code');
+    code.textContent = shortcut;
+    const suffix = document.createTextNode(' next time!');
+    
+    toast.appendChild(icon);
+    toast.appendChild(code);
+    toast.appendChild(suffix);
+    
     container.appendChild(toast);
 
     // Auto-dismiss after 3 seconds
@@ -148,8 +158,8 @@
     // Check if this is a navigation element we care about
     const shortcut = findShortcut(text);
     if (shortcut) {
-      // Show toast with shortcut hint
-      showToast(`💡 Press <code>${shortcut}</code> next time!`);
+      // Show toast with shortcut hint (shortcut is safe as it comes from our controlled map)
+      showToast(shortcut);
     }
   }
 
