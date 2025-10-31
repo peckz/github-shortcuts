@@ -6,6 +6,7 @@
   'use strict';
 
   // Map of GitHub navigation elements to their keyboard shortcuts
+  // Based on GitHub's official keyboard shortcuts
   const shortcutMap = {
     'Pull requests': 'g then p',
     'Issues': 'g then i',
@@ -13,9 +14,6 @@
     'Actions': 'g then a',
     'Projects': 'g then b',
     'Wiki': 'g then w',
-    'Security': 'g then g',
-    'Insights': 'g then g',
-    'Settings': 'g then g',
     'Notifications': 'g then n',
   };
 
