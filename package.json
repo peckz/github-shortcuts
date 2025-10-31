@@ -1,0 +1,8 @@
+{
+  "name": "github-shortcuts",
+  "version": "1.0.0",
+  "description": "Chrome extension that shows GitHub keyboard shortcut hints",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
